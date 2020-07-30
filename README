@@ -1,101 +1,10 @@
 ________________________________________________________________________________
 ABOUT THE PROJECT
 
-This project is an effort to develop basic C++ libraries for dealing
+This project is an effort to develop basic Matlab scripts for dealing
 with LIDAR (laser detection and ranging) data files, particularly
 those recorded by the instruments from Raymetrics/Licel
-manufactures. All code were written from scratch based on the Licel
-data format:
-
-http://www.licel.com/raw_data_format.html
-
-________________________________________________________________________________
-DISTRIBUTED FILES
-
-*.cpp              Source code of programs and libraries
-*.h                Header files of libraries
-RM???????.???      Binary example files
-RM???????.???.txt  ASCII example files (converted by Licel software)
-
-________________________________________________________________________________
-HOW TO COMPILE
-
-To compile the code you will need a working C++ compiler. If you
-are not using GNU/g++, just edit the Makefile as you wish. To compile
-everything at once, just:
-
-make all
-
-Or if you want to compile only one particular program, for example,
-rm2bin, try:
-
-make rm2bin
-
-To clean up objects and temporary files, try:
-
-make clean
-
-To clean up everything, including the compiled executables:
-
-make clean-all
-
-If you are running on linux you should try to check the compiled programs
-
-make check
-
-________________________________________________________________________________
-HOW TO USE
-
-rm2csv [list of input binary files] 
-
-  Converts a list of binary Raymetrics/Licel files into ASCII
-  files. New files are named by adding a ".csv" after each file's
-  name. Data are converted to physical units. All numbers are
-  separated by ";" to be read into a spreadsheet program as a
-  comma-separated-values (CSV) file.
-
-rm2dat [input binary files] 
-
-  Converts a list of binary Raymetrics/Licel files into ASCII
-  files. New files are named by adding a ".dat" after each file's
-  name. Data are converted to physical units. A "# " is added to each
-  header line and data is separated by tabs. The output format could
-  be used easily with standard plotting utilities such as gnuplot.
-
-rm2nc [list of input binary files] 
-
-  Converts a list of binary Raymetrics/Licel files into netcdf
-  files. New files are named by adding a ".nc" after each file's
-  name. Data are converted to physical units. netCDF complies with
-  COARDS conventions besides including fields such as contact and
-  history. The output format could be used easily with standard
-  scientific software such as grads, matlab, etc.
-
-rm2nclist [output file] [list of input binary files] 
-
-  Converts a list of binary Raymetrics/Licel files into a single netcdf
-  file. The new file is will be <output>.nc. Data are converted to
-  physical units. netCDF complies with COARDS conventions besides
-  including fields such as contact and history. The output format
-  could be used easily with standard scientific software such as
-  grads, matlab, etc.
-
-rm2bin [output file] [list of input binary files] 
-
-  Adds a list of files and save the result in a binary Raymetrics/Licel
-  file. The new file must not exist. Raw data and number of shoots are
-  accumulated; T0 and P0 are averaged; start and end dates are set to
-  be the earliest and latest amongst all files respectively, hence
-  covering the whole period. All other variables, e.g. altitude,
-  repetition rate, channel configuration, must be the same in all
-  files.
-
-rm2name [list of input binary files] 
-
-  This is a very simple program that reads a list of Raymetrics/Licel
-  files and, for each file, print a string to the screen with the
-  following format: RM_YYYY-MM-DD_hh:mm. This could be used, for
-  example, in a script that will rename the files.
+manufactures.
 
 ________________________________________________________________________________
 ABOUT ME
